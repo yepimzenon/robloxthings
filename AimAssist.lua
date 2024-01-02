@@ -24,6 +24,7 @@ local Smooth = true --Add smoothness to the locking
 local SmoothRate = 10 --Smoothness Speed
 
 local AimAssistRange = 60 --Max Range
+local AutoActivateToolOnLock = true --basically shoots a gun derived from the tool class
 
 
 --Utils
@@ -85,7 +86,7 @@ local RS = game:GetService("RunService")
 local UIS = game:GetService("UserInputService")
 
 
-local aimAssist = true -- do not change
+local aimAssist = false -- do not change
 
 --Atrocity below
 
@@ -180,6 +181,12 @@ RS:BindToRenderStep("AimAssist", Enum.RenderPriority.Camera.Value, function()
 					local vector2 = Vector2.new(nuhuh.X, nuhuh.Y)
 					
 					if OnScreen and Distance(vector2, center) < FOVLockView then
+						local tool = Character:FindFirstChildOfClass("Tool")
+						
+						if not IsNil(tool) and AutoActivateToolOnLock then
+							tool:Activate()
+						end
+						
 						if Equivalent(Smooth, false) then
 							Camera.CFrame = CFrame.lookAt(Camera.CFrame.Position, closestHum.RootPart.Position + Vector3.yAxis * 0.5)
 						else
