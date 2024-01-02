@@ -85,7 +85,7 @@ local RS = game:GetService("RunService")
 local UIS = game:GetService("UserInputService")
 
 
-local aimAssist = false -- do not change
+local aimAssist = true -- do not change
 
 --Atrocity below
 
