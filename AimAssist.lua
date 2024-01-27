@@ -7,7 +7,7 @@
 --[[     Settings     ]]--
 --Change these to your liking
 
-local Config = "Quiet" --Options: Silent, Quiet, Blatant, Really Blatant. (options go from unnoticable to extremely noticable) Set this to blank if you want to change the settings yourself
+local Config = "Blatant" --Options: Silent, Quiet, Blatant, Really Blatant. (options go from unnoticable to extremely noticable) Set this to blank if you want to change the settings yourself
 
 --Ignore these if you already have a config
 
